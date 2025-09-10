@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.nav-container{
+    background-color: aqua;
+    position: sticky;
+    top: 0;
+}
+.nav-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+}
+.nav-flex ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-flex ul li a{
+    line-height: 60px;
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    display: block;
+}
+.nav-flex label,#humberger{
+    display: none;
+}
+.brand-name h2{
+    margin: 20px 0 0 20px;
+}
+ul li a:hover{
+    background-color: rgb(64, 138, 138);
+    transition: all 0.7s;
+}
+/* versi tablet */
+@media screen and (max-width:769px){
+    /* menampilkan humberger */
+    .nav-flex label{
+        display: inline-block;
+        font-style: normal;
+        font-size: 32px;
+        padding: 9px;
+    }
+    /* susun ulang menu menjadi vertikal */
+    .nav-container .nav-flex {
+        width: 100%;
+    }
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        padding: 0 30px;
+        height: auto;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    nav ul a{
+        display: block;
+        background-color: aqua;
+        padding: 10px;
+        height: auto;
+    }
+    .brand-name h2{
+        position: absolute;
+        right: 20px;
+        text-transform: uppercase;
+    }
+    .nav-container nav{
+        display: none;
+    }
+    .nav-container .nav-flex input:checked ~ nav{
+        display: flex;
+    }
+}
